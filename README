@@ -1,0 +1,20 @@
+TypeSafe-security
+================================================================================
+
+A security abstraction providing a Subject to work with and various annotations
+for easy restrictions.
+
+
+Module to install:
+--------------------------------------------------------------------------------
+TypeSafe/security/SecurityModule.php
+
+
+Interface to implement and bind:
+--------------------------------------------------------------------------------
+TypeSafe/security/SecurityManager.php
+
+
+Usage (possible Injection):
+--------------------------------------------------------------------------------
+TypeSafe/security/Subject.php

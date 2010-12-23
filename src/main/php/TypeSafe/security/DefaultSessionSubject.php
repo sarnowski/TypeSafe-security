@@ -23,12 +23,12 @@ require_once('SecurityManager.php');
  * 
  * @author Tobias Sarnowski
  */ 
-class DefaultSubject implements Subject {
+class DefaultSessionSubject implements Subject {
 
     /**
      * Session key to use.
      */
-    const PRINCIPAL_KEY = "__DEFAULT_SUBJECT_PRINCIPAL";
+    const PRINCIPAL_KEY = "__DEFAULT_SESSION_SUBJECT_PRINCIPAL";
 
     /**
      * @var SecurityManager

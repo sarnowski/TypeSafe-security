@@ -48,10 +48,9 @@ interface Subject {
      * Logs out the current user.
      *
      * @abstract
-     * @param mixed $principal an optional hint for the security manager
      * @return void
      */
-    public function logout($principal = null);
+    public function logout();
 
     /**
      * Returns if the current user is authenticated.
@@ -76,7 +75,8 @@ interface Subject {
      *
      * @abstract
      * @param  string $permission
-     * @return boolean
+     * @return void
+     * @throws NotAuthorizedException
      */
     public function checkRole($role);
 
@@ -95,7 +95,8 @@ interface Subject {
      *
      * @abstract
      * @param  string $permission
-     * @return boolean
+     * @return void
+     * @throws NotAuthorizedException
      */
     public function checkPermission($permission);
 

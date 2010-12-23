@@ -16,7 +16,7 @@
  */
 
 require_once('pinjector/Module.php');
-require_once('DefaultSubject.php');
+require_once('DefaultSessionSubject.php');
 require_once('RequiresAuthenticationInterceptor.php');
 require_once('RequiresAuthenticationPointcut.php');
 require_once('RequiresRolesInterceptor.php');
@@ -33,7 +33,7 @@ require_once('Subject.php');
 class SecurityModule implements Module {
 
     public function configure(Binder $binder) {
-        $binder->bind('Subject')->to('DefaultSubject')->inRequestScope();
+        $binder->bind('Subject')->to('DefaultSessionSubject')->inRequestScope();
 
         $binder->bind('RequiresAuthenticationInterceptor')->inRequestScope();
         $binder->interceptWith('RequiresAuthenticationInterceptor')->on(new RequiresAuthenticationPointcut());

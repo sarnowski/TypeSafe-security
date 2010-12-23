@@ -45,10 +45,9 @@ interface SecurityManager {
      *
      * @abstract
      * @param  Subject $subject
-     * @param  mixed $principal
      * @return mixed
      */
-    public function logout(Subject $subject, $principal = null);
+    public function logout(Subject $subject);
 
     /**
      * Returns if the subject is authenticated.

@@ -33,15 +33,15 @@ require_once('Subject.php');
 class SecurityModule implements Module {
 
     public function configure(Binder $binder) {
-        $binder->bind('Subject')->to('DefaultSessionSubject')->inRequestScope();
+        $binder->bind('Subject')->to('DefaultSessionSubject');
 
-        $binder->bind('RequiresAuthenticationInterceptor')->inRequestScope();
+        $binder->bind('RequiresAuthenticationInterceptor');
         $binder->interceptWith('RequiresAuthenticationInterceptor')->on(new RequiresAuthenticationPointcut());
 
-        $binder->bind('RequiresRolesInterceptor')->inRequestScope();
+        $binder->bind('RequiresRolesInterceptor');
         $binder->interceptWith('RequiresRolesInterceptor')->on(new RequiresRolesPointcut());
 
-        $binder->bind('RequiresPermissionsInterceptor')->inRequestScope();
+        $binder->bind('RequiresPermissionsInterceptor');
         $binder->interceptWith('RequiresPermissionsInterceptor')->on(new RequiresPermissionsPointcut());
     }
 }
